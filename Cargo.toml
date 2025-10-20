@@ -3,6 +3,7 @@ name = "tauri-plugin-system-fonts"
 version = "2.0.0"
 authors = [ "ayangweb" ]
 description = "Support getting all fonts installed on your system."
+repository = "https://github.com/ayangweb/tauri-plugin-system-fonts"
 keywords = ["tauri", "tauri-plugin", "font", "fonts", "system-fonts"]
 license = "MIT"
 edition = "2021"
