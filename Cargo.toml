@@ -1,6 +1,6 @@
 [package]
 name = "tauri-plugin-system-fonts"
-version = "2.0.1"
+version = "2.0.2"
 authors = [ "ayangweb" ]
 description = "Support getting all fonts installed on your system."
 repository = "https://github.com/ayangweb/tauri-plugin-system-fonts"
