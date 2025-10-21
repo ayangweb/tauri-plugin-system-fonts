@@ -4,7 +4,7 @@
 
 Support getting all fonts installed on your system.
 
-![](https://github.com/user-attachments/assets/7a1a6cfd-68f7-4fd3-a4ad-ed1f7a18ae6d)
+![](https://github.com/user-attachments/assets/280186a2-d6cf-496a-bf23-90f8a4d2f506)
 
 ## Platform Support
 
