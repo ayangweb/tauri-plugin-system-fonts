@@ -6,6 +6,16 @@ Support getting all fonts installed on your system.
 
 ![](https://github.com/user-attachments/assets/7a1a6cfd-68f7-4fd3-a4ad-ed1f7a18ae6d)
 
+## Platform Support
+
+| Platform | Supported |
+| -------- | --------- |
+| Windows  | ✅        |
+| macOS    | ✅        |
+| Linux    | ✅        |
+| Android  | ❌        |
+| iOS      | ❌        |
+
 ## Install
 
 ```shell
