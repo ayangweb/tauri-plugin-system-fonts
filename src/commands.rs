@@ -1,7 +1,14 @@
 use fontdb::{Database, Source, Style};
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 use std::collections::HashSet;
 use tauri::command;
+
+#[derive(Clone, Debug, PartialEq, Eq, Serialize, Deserialize)]
+pub enum SystemFontStyle {
+    Normal,
+    Italic,
+    Oblique,
+}
 
 #[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -11,7 +18,7 @@ pub struct SystemFont {
     pub font_name: String,
     pub path: String,
     pub weight: u16,
-    pub style: String,
+    pub style: SystemFontStyle,
     pub monospaced: bool,
 }
 
@@ -41,9 +48,9 @@ pub async fn get_system_fonts() -> Vec<SystemFont> {
                 }
 
                 let style = match font.style {
-                    Style::Normal => "normal",
-                    Style::Italic => "italic",
-                    Style::Oblique => "oblique",
+                    Style::Normal => SystemFontStyle::Normal,
+                    Style::Italic => SystemFontStyle::Italic,
+                    Style::Oblique => SystemFontStyle::Oblique,
                 };
 
                 let font = SystemFont {
@@ -52,7 +59,7 @@ pub async fn get_system_fonts() -> Vec<SystemFont> {
                     font_name: font.post_script_name.clone(),
                     path: path.to_string_lossy().to_string(),
                     weight: font.weight.0,
-                    style: style.to_string(),
+                    style,
                     monospaced: font.monospaced,
                 };
 

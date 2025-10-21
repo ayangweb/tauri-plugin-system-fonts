@@ -4,13 +4,15 @@ export const COMMAND = {
   GET_SYSTEM_FONTS: "plugin:system-fonts|get_system_fonts",
 };
 
+export type SystemFontStyle = "normal" | "italic" | "oblique";
+
 export interface SystemFont {
   id: string;
   name: string;
   fontName: string;
   path: string;
   weight: number;
-  style: string;
+  style: SystemFontStyle;
   monospaced: boolean;
 }
 
