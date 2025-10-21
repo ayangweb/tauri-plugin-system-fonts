@@ -4,7 +4,7 @@ export const COMMAND = {
   GET_SYSTEM_FONTS: "plugin:system-fonts|get_system_fonts",
 };
 
-export interface Font {
+export interface SystemFont {
   id: string;
   name: string;
   fontName: string;
@@ -23,5 +23,5 @@ export interface Font {
  * const fonts = await getSystemFonts();
  */
 export const getSystemFonts = () => {
-  return invoke<Font[]>(COMMAND.GET_SYSTEM_FONTS);
+  return invoke<SystemFont[]>(COMMAND.GET_SYSTEM_FONTS);
 };

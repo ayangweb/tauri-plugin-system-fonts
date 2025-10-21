@@ -5,7 +5,7 @@ use tauri::command;
 
 #[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct Font {
+pub struct SystemFont {
     pub id: String,
     pub name: String,
     pub font_name: String,
@@ -24,7 +24,7 @@ pub struct Font {
 /// let fonts = get_system_fonts().await;
 /// ```
 #[command]
-pub async fn get_system_fonts() -> Vec<Font> {
+pub async fn get_system_fonts() -> Vec<SystemFont> {
     let mut db = Database::new();
 
     db.load_system_fonts();
@@ -46,7 +46,7 @@ pub async fn get_system_fonts() -> Vec<Font> {
                     Style::Oblique => "oblique",
                 };
 
-                let font = Font {
+                let font = SystemFont {
                     id: font.id.to_string(),
                     name,
                     font_name: font.post_script_name.clone(),

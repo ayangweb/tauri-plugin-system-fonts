@@ -3,10 +3,10 @@ import { Table } from "antd";
 import { ColumnsType } from "antd/es/table";
 import { toString } from "es-toolkit/compat";
 import { useState } from "react";
-import { Font, getSystemFonts } from "tauri-plugin-system-fonts-api";
+import { SystemFont, getSystemFonts } from "tauri-plugin-system-fonts-api";
 
 const App = () => {
-  const [fonts, setFonts] = useState<Font[]>([]);
+  const [fonts, setFonts] = useState<SystemFont[]>([]);
 
   useMount(async () => {
     const fonts = await getSystemFonts();
@@ -14,7 +14,7 @@ const App = () => {
     setFonts(fonts);
   });
 
-  const render = (value: any, record: Font) => {
+  const render = (value: any, record: SystemFont) => {
     return (
       <div
         style={{
@@ -26,7 +26,7 @@ const App = () => {
     );
   };
 
-  const columns: ColumnsType<Font> = [
+  const columns: ColumnsType<SystemFont> = [
     {
       title: "Id",
       dataIndex: "id",
@@ -38,7 +38,7 @@ const App = () => {
       render,
     },
     {
-      title: "FontName",
+      title: "Font Name",
       dataIndex: "fontName",
       render,
     },
