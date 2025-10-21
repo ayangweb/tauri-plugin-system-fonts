@@ -2,7 +2,7 @@ import type { Config } from "release-it";
 
 export default {
   git: {
-    commitMessage: "tauri-plugin-system-fonts v${version}",
+    commitMessage: "tauri-plugin-system-fonts-api v${version}",
     tagName: "v${version}",
   },
   npm: {
